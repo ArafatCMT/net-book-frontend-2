@@ -1,0 +1,75 @@
+.navbar .navbar-nav .nav-item a{
+    padding: 12px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+.navbar .navbar-nav .nav-but{
+    padding: 5px;
+}
+#navbar-brand{
+    color: #fff;
+    font-weight: 500;
+    font-size: 22px;
+}
+.button{
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+
+}
+.login-btn{
+    background-color: #009970;
+}
+.login-btn:hover{
+    text-decoration: none;
+    background-color: #10b981;
+    color: white;
+}
+.signup-btn{
+    background-color:#2563eb;
+}
+.signup-btn:hover{
+    text-decoration: none;
+    background-color:#3b82f6;
+    color: white;
+}
+.logout-btn{
+    background-color:#dc2626;
+}
+.logout-btn:hover{
+    background-color: #ef4444;
+    color: white;
+    cursor: pointer;
+}
+.nav-link{
+    color: #666777;
+    font-weight: 500;
+}
+.addPost:hover{
+    cursor: pointer;
+}
+.profile-btn{
+    background-color:#9333ea;
+}
+.profile-btn:hover{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #8b5cf6;
+}
+.icon{
+    width: 35px;
+    height: 3px;
+    background-color: coral;
+    /* border: 1px solid coral; */
+    margin: 6px 0;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+/* https://www.flaticon.com/free-icons/menu */

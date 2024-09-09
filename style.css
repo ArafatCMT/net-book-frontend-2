@@ -1,0 +1,154 @@
+.card-body-container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.pro-img{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #22c55e;
+    border-radius: 50%;
+}
+#top-header{
+    height: 170px;
+}
+.img-div{
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border: 3px solid #22c55e;
+    border-radius: 50%;
+    margin: auto;
+}
+.profile-photo{
+    width: 155px;
+    height: 155px;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.link:hover{
+    text-decoration: underline;
+    color: black;
+}
+#profile-link:hover{
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+#home:hover{
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+.pro-card{
+    border-radius: 7px;
+}
+.pro-card:hover{
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+.empty{
+    display: none;
+    text-align: center;
+}
+.not-found{
+    width: 350px;
+    border-radius: 5px;
+}
+.cmnt-img{
+    width: 22px;
+    height: 22px;
+}
+.zero-friend{
+    width: 220px;
+    height: 215px;
+}
+.request{
+    width: 350px;
+}
+#profile-name a{
+    text-decoration: none;
+    color: #14191E;
+}
+#profile-name a:hover{
+    color:#0F6FEC;
+}
+
+@media only screen and (max-width: 1024px) {
+    .right-container {
+      display: none;
+    }
+  }
+@media only screen and (max-width: 1024px) {
+    .left-container {
+      display: none;
+    }
+  }
+
+.d-down:hover{
+    cursor: pointer;
+}
+.news{
+    cursor: pointer;
+    /* color: #0d0d0e; */
+}
+.news:hover{
+    color: #0F6FEC;
+}
+.edit-btn{
+    width: 90%;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    background-color: #E7F0FD;
+    color: #0F6FEC;
+}
+.edit-btn:hover a{
+    color: #fff;
+}
+.edit-btn:hover{
+    cursor: pointer;
+    background-color: #0F6FEC;
+    color: #fff;
+}
+.req-btn{
+    width: 100%;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+.confirm{
+    background-color: #0F6FEC;
+}
+.confirm:hover{
+    cursor: pointer;
+    background-color: #0b66dd;
+}
+.confirm a{
+    color: #fff;
+}
+.confirm a:hover{
+    color: #fff;
+}
+.delete{
+    background: #E4E6EB;
+}
+.delete:hover{
+    cursor: pointer;
+    background: #D8DADF;
+}
+.delete a{
+    color: #212529;
+}
+.delete a:hover{
+    color: #212529;
+}
+.friend-btn{
+    width: 50%;
+    border: none;
+    /* margin-left: auto;
+    margin-right: auto; */
+    border-radius: 4px;
+}

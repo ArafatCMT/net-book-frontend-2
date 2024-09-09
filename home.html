@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- frontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Net Book</title>
+  </head>
+  <body class="p-0 m-0">
+    <div class="col-lg-12 col-md-12 col-sm-12" id="navbar" style="position: sticky; top: 0%; z-index: 1;"></div>
+
+    <!-- total posts -->
+     <div class="row col-lg-12 col-md-12 col-sm-12" style="background: #EFF2F6;">
+      <!-- left -->
+      <div class="col-lg-3 col-md-12 col-sm-12 right-container p-0" >
+        <!-- card -->
+        <div class="" style="position: sticky; top: 10%;">
+        <div class="border col-lg-8 col-md-12 col-sm-12 ms-auto" style="border-radius: 5px;">
+          <!-- profile div  card-1-->
+          <div style="background: #FFFFFF;" class="p-2">
+            <div style="width: 70px; height: 70px;  border: 2px solid #22c55e ;border-radius: 5px; overflow: hidden;" class="mx-auto mt-2" id="profile-img"></div>
+            
+            <div id="profile-name" class="mt-3"></div>
+
+            <div class="text-center px-3 mt-2">
+              <p class="text-secondary" id="description"></p>
+            </div>
+
+            <div class="d-flex mt-4 mb-3">
+
+              <div class="col-lg-4 col-md-4 col-sm-4 border-end text-center p-1">
+                <h5 class="pb-0 mb-0" id="post-count"></h5>
+                <h6 class="text-secondary">Post</h6>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 border-end text-center p-1">
+                <h5 class="pb-0 mb-0" id="friend-count"></h5>
+                <h6 class="text-secondary">Friends</h6>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 text-center p-1">
+                <h5 class="pb-0 mb-0" id="like_"></h5>
+                <h6 class="text-secondary">Likes</h6>
+              </div>
+
+            </div>
+            <p class="text-center mb-3 py-1 edit-btn " onclick="ProfilePage(event)" style="font-weight: 500;">
+               View profile
+            </p>
+          </div>
+        </div>
+        <!-- profile card end  -->
+
+        <!-- ads card  -->
+        <div class="border col-lg-8 col-md-12 col-sm-12 ms-auto mt-4" style="border-radius: 5px; position: sticky ; top:55% ; background-color: #FFFFFF;">
+          <!-- <p class="text-center px-2 mt-3 fs-6 text-secondary" style="line-height: 1.5; font-weight: 500;">Share your daily activities in net book plate form and make friends and like comment on your friend post.</p> -->
+          <p class="text-center px-2 mt-3" style="line-height: 1.5; font-weight: 600; color: #25292D;">NetBook connects people globally, enabling communication, social interaction, content sharing, and community building online.</p>
+          
+          <div id="carouselExampleDark" class="carousel carousel-dark slide mt-5" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="./images/adam.jpg" class="d-block w-100 img-fluid" alt="..." >
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="./images/ballons.jpg" class="d-block w-100 img-fluid" alt="..." >
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+              <div class="carousel-item">
+                <img src="./images/twoer.jpg" class="d-block w-100 img-fluid" alt="..." >
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      </div>
+        <!-- middle -->
+       <div class="col-lg-6 col-md-12 col-sm-12 mt-4 ">
+         <div class="col-lg-11 col-md-12 col-sm-12 mx-auto" id="allPost">
+          <div class="empty mx-auto col-lg-10 col-md-12 col-sm-12" id="empty">
+            <img src="./images/undraw_No_data_re_kwbl (1).png" alt="" class="not-found">
+            <p><b class="text-secondary">No Post Avaliable !</b></p>
+          </div>
+         </div>
+       </div>
+       <!-- right -->
+       <div class="col-lg-3 mt-4 left-container p-0" >
+        <div class="" style="position: sticky; top: 10%;">
+          <div class="border col-lg-8 col-md-12 col-sm-12 me-auto p-3" style="border-radius: 5px; background: #FFFFFF;">
+            <h6 class="ms-3" ><i class="fa-solid fa-user fs-6 text-secondary"></i> Discover People</h6>
+            <div class="col-12 mx-auto mt-3" id="profile-1" style="border-radius: 5px; background: #FFFFFF;"></div>
+
+            <p class="text-center mb-1 mt-3 py-1 edit-btn mt-2" onclick="DiscoverPeople()">
+              <a href="#!" style="text-decoration: none; font-weight: 500;">View more</a>
+            </p>
+          </div>
+
+          <div class="border col-lg-8 col-md-12 col-sm-12 me-auto p-3 mt-4" style="border-radius: 5px; background: #FFFFFF;">
+            <h5 class="mx-2" style="font-weight: 700;">Today’s news</h5>
+            
+            <div class="mb-3 mx-2">
+              <div class="">
+                <h6 class=" mb-0 pb-0 news" >Ten questions you should answer truthfully</h6>
+                <small class="text-secondary mt-0 pt-0">2hr</small>
+              </div>
+            </div>
+
+            <div class="mb-3 mx-2">
+              <div class="">
+                <h6 class="ms-1 mb-0 pb-0 news" >Five unbelievable facts about money</h6>
+                <small class="text-secondary mt-0 pt-0">3hr</small>
+              </div>
+            </div>
+
+            <div class="mb-3 mx-2">
+              <div class="">
+                <h6 class="mb-0 pb-0 news" >Best Pinterest Boards for learning about business</h6>
+                <small class="text-secondary  mt-0 pt-0">4hr</small>
+              </div>
+            </div>
+
+            <div class="mx-2">
+              <div class="">
+                <h6 class=" mb-0 pb-0 news" >Skills that you can learn from business</h6>
+                <small class="text-secondary mt-0 pt-0">6hr</small>
+              </div>
+            </div>
+
+            <!-- <div class="mb-2 mx-2">
+              <div class="">
+                <h6 class=" mb-0 pb-0 news" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, est.</h6>
+                <small class="text-secondary mt-0 pt-0">9hr</small>
+              </div>
+            </div> -->
+
+
+          </div>
+        </div>
+        
+     </div>
+
+    <!-- create post modal -->
+    <div id="post-modal"></div>
+
+    <script src="./navbar.js"></script>
+    <script src="./auth.js"></script>
+    <script src="./post.js"></script>
+    <!-- <script src="./profile.js"></script> -->
+    <script src="./comments.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", getAllPost);
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", PostModal);
+    </script>
+
+    <script>
+      function ProfilePage(event){
+        event.preventDefault();
+        window.location.href = "./profile.html";
+      }
+
+      function DiscoverPeople(){
+        window.location.href = "./request.html";
+      }
+    </script>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+
+<!-- <div class="col-lg-12 col-md-12 col-sm-12"  style="position: sticky; top: 10%; border-radius: 5px; height: 400px;">
+  <a href="./profile.html" style="text-decoration: none;">
+    <div class="col-11 mx-auto border mb-1" id="profile-link" style="border-radius: 3px;"></div>
+  </a>
+
+  <a href="./home.html" style="text-decoration: none;">
+  <div class="col-11 mx-auto mb-1 border" id="home" style="border-radius: 3px;">
+    <div class="col-11 card-body-container mb-2 p-3">
+      <h6 class="" style="color: rgb(62, 61, 61);"><i class="fa-solid fa-house fs-5" style="color: rgb(62, 61, 61);"></i>  <b>Home</b></h6>
+    </div>
+  </div>
+  </a>
+
+  <a href="./request.html" style="text-decoration: none;">
+    <div class="col-11 mx-auto mb-1 border" id="home" style="border-radius: 3px;">
+      <div class="col-11 card-body-container mb-2 p-3">
+        <h6 class="" style="color: rgb(62, 61, 61);"><i class="fa-solid fa-user-plus fs-5"></i>  <b>Friend Requests</b></h6>
+      </div>
+    </div>
+  </a>
+
+  <a href="./friends.html" style="text-decoration: none;">
+    <div class="col-11 mx-auto mb-1 border" id="home" style="border-radius: 3px;">
+      <div class="col-11 card-body-container mb-2 p-3">
+        <h6 class="" style="color: rgb(62, 61, 61);"><i class="fa-solid fa-user-group fs-5"></i>  <b>Friend List</b></h6>
+      </div>
+    </div>
+  </a>
+
+  <div class="col-11 mx-auto mb-1 border" id="home" style="border-radius: 3px;">
+    <div class="col-11 card-body-container mb-2 p-3">
+      <h6 class="" style="color: rgb(62, 61, 61);"><i class="fa-solid fa-clock fs-5"></i>  <b>Memories</b></h6>
+    </div>
+  </div>
+</div> -->
