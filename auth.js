@@ -92,6 +92,6 @@ const handleLogout = () => {
     // console.log('hello')
     localStorage.removeItem("authToken");
     localStorage.removeItem("accountId");
-    window.location.href = "./index.html";
+    window.location.href = "./login.html";
   });
 };
