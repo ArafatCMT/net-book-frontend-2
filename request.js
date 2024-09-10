@@ -2,14 +2,14 @@ const myProfile_ = () =>{
     const accountId = localStorage.getItem("accountId")
 
     const pro_file = document.getElementById("profile-1")
-    fetch(`http://127.0.0.1:8000/accounts/profile/`)
+    fetch(`https://net-book-klqt.onrender.com/accounts/profile/`)
     .then((res) => res.json())
     .then((accounts) => {
       
       accounts.forEach((account) =>{
         if(account.id != accountId)
         {
-          fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
               .then((res) => res.json())
               .then((user) => {
                 const div = document.createElement("div");
@@ -34,7 +34,7 @@ const myProfile_ = () =>{
 }
 const loadRequest = () =>{
   const accountId = localStorage.getItem("accountId")
-  fetch(`http://127.0.0.1:8000/accounts/receive/request/?account_id=${accountId}`)
+  fetch(`https://net-book-klqt.onrender.com/accounts/receive/request/?account_id=${accountId}`)
   .then((res) => res.json())
   .then((data) => {
     // console.log(data.length)
@@ -49,11 +49,11 @@ const loadRequest = () =>{
       const parent = document.getElementById("allRequest")
 
       data.forEach((obj) =>{
-        fetch(`http://127.0.0.1:8000/accounts/profile/${obj.sender}/`)
+        fetch(`https://net-book-klqt.onrender.com/accounts/profile/${obj.sender}/`)
         .then(res => res.json())
         .then(account => {
           
-          fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
             .then((res) => res.json())
             .then((user) => {
               // console.log(user)
@@ -93,7 +93,7 @@ const RemoveRequest = (event, id) =>{
   const accountId = localStorage.getItem("accountId")
 
   
-    fetch(`http://127.0.0.1:8000/accounts/accept/${id}/${accountId}/${0}/`,{
+    fetch(`https://net-book-klqt.onrender.com/accounts/accept/${id}/${accountId}/${0}/`,{
       method:"GET",
       headers: {
         "content-type": "application/json",
@@ -112,7 +112,7 @@ const Confirm_ = (event, id)=>{
   const token = localStorage.getItem("authToken");
   const accountId = localStorage.getItem("accountId")
 
-  fetch(`http://127.0.0.1:8000/accounts/accept/${id}/${accountId}/${1}/`,{
+  fetch(`https://net-book-klqt.onrender.com/accounts/accept/${id}/${accountId}/${1}/`,{
     method:"GET",
     headers: {
       "content-type": "application/json",

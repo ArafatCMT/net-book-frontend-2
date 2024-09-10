@@ -1,6 +1,6 @@
 const ShowAllPostForPublic = () => {
   // total post
-  fetch("http://127.0.0.1:8000/posts/all/")
+  fetch("https://net-book-klqt.onrender.com/posts/all/")
     .then((res) => res.json())
     .then((posts) => {
       const parent = document.getElementById("allPost");
@@ -14,13 +14,13 @@ const ShowAllPostForPublic = () => {
         posts.forEach((post) => {
         
           // kon account thake post kora hoica
-          fetch(`http://127.0.0.1:8000/accounts/profile/${post.account}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/profile/${post.account}/`)
             .then((res) => res.json())
             .then((account) => {
               // console.log(account)
   
               // account er first_name r last_name bair kortaci
-              fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+              fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
                 .then((res) => res.json())
                 .then((user) => {
                   // console.log(user);
@@ -31,13 +31,13 @@ const ShowAllPostForPublic = () => {
                   div.classList.add("mb-3");
   
                   // ak ta post e total like bair kortaci
-                  fetch(`http://127.0.0.1:8000/likes/total/?post_id=${post.id}`)
+                  fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
                     .then((res) => res.json())
                     .then((like) => {
                       // ak ta post e total comment bair kortaci
                       
                       fetch(
-                        `http://127.0.0.1:8000/comments/list/?post_id=${post.id}`
+                        `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
                       )
                         .then((res) => res.json())
                         .then((comment) => {
@@ -98,12 +98,12 @@ const ShowAllPostForPublic = () => {
     });
 
     const pro_file = document.getElementById("profile-1")
-    fetch(`http://127.0.0.1:8000/accounts/profile/`)
+    fetch(`https://net-book-klqt.onrender.com/accounts/profile/`)
     .then((res) => res.json())
     .then((accounts) => {
       
       accounts.forEach((account) =>{
-          fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
               .then((res) => res.json())
               .then((user) => {
                 const div = document.createElement("div");

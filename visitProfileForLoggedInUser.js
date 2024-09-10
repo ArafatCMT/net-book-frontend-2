@@ -10,7 +10,7 @@ const OtherProfilePosts = () => {
   const myAccountId = localStorage.getItem("accountId");
   // console.log(accountId)
 
-  fetch(`http://127.0.0.1:8000/posts/all/?account_id=${accountId}`)
+  fetch(`https://net-book-klqt.onrender.com/posts/all/?account_id=${accountId}`)
     .then((res) => res.json())
     .then((posts) => {
       // console.log(posts)
@@ -21,12 +21,12 @@ const OtherProfilePosts = () => {
       } else {
         posts.forEach((post) => {
           // console.log(post)
-          fetch(`http://127.0.0.1:8000/accounts/profile/${accountId}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`)
             .then((res) => res.json())
             .then((account) => {
               // console.log(account);
 
-              fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+              fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
                 .then((res) => res.json())
                 .then((user) => {
                   // console.log(user);
@@ -36,7 +36,7 @@ const OtherProfilePosts = () => {
                   div.classList.add("col-sm-12");
                   div.classList.add("mb-3");
 
-                  fetch(`http://127.0.0.1:8000/likes/total/?post_id=${post.id}`)
+                  fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
                     .then((res) => res.json())
                     .then((likes) => {
                       let is_like = false;
@@ -49,7 +49,7 @@ const OtherProfilePosts = () => {
 
                       if (is_like == true) {
                         fetch(
-                          `http://127.0.0.1:8000/comments/list/?post_id=${post.id}`
+                          `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
                         )
                           .then((res) => res.json())
                           .then((comment) => {
@@ -108,7 +108,7 @@ const OtherProfilePosts = () => {
                           });
                       } else {
                         fetch(
-                          `http://127.0.0.1:8000/comments/list/?post_id=${post.id}`
+                          `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
                         )
                           .then((res) => res.json())
                           .then((comment) => {
@@ -189,21 +189,21 @@ const loadOtherProfile = () => {
   const description = document.getElementById("description");
   const button = document.getElementById("friend-button");
 
-  fetch(`http://127.0.0.1:8000/accounts/friend/${user_id}/${accountId}/`)
+  fetch(`https://net-book-klqt.onrender.com/accounts/friend/${user_id}/${accountId}/`)
     .then((res) => res.json())
     .then((data) => {
       // console.log(data)
       if (data.receiver_account == null) {
         // friend na
         fetch(
-          `http://127.0.0.1:8000/accounts/send/request/${user_id}/${accountId}/`
+          `https://net-book-klqt.onrender.com/accounts/send/request/${user_id}/${accountId}/`
         )
           .then((res) => res.json())
           .then((data) => {
             // console.log(data,'ami dei nai')
             if (data.receiver == null) {
               fetch(
-                `http://127.0.0.1:8000/accounts/send/request/${accountId}/${user_id}/`
+                `https://net-book-klqt.onrender.com/accounts/send/request/${accountId}/${user_id}/`
               )
                 .then((res) => res.json())
                 .then((data) => {
@@ -211,7 +211,7 @@ const loadOtherProfile = () => {
                     // Confirm and Delete
 
                     fetch(
-                      `http://127.0.0.1:8000/accounts/profile/${accountId}/`
+                      `https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`
                     )
                       .then((res) => res.json())
                       .then((account) => {
@@ -228,7 +228,7 @@ const loadOtherProfile = () => {
                           `;
 
                         fetch(
-                          `http://127.0.0.1:8000/accounts/user/${account.user}/`
+                          `https://net-book-klqt.onrender.com/accounts/user/${account.user}/`
                         )
                           .then((res) => res.json())
                           .then((user) => {
@@ -249,7 +249,7 @@ const loadOtherProfile = () => {
                     // Add Friend
 
                     fetch(
-                      `http://127.0.0.1:8000/accounts/profile/${accountId}/`
+                      `https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`
                     )
                       .then((res) => res.json())
                       .then((account) => {
@@ -263,7 +263,7 @@ const loadOtherProfile = () => {
                           `;
 
                         fetch(
-                          `http://127.0.0.1:8000/accounts/user/${account.user}/`
+                          `https://net-book-klqt.onrender.com/accounts/user/${account.user}/`
                         )
                           .then((res) => res.json())
                           .then((user) => {
@@ -285,7 +285,7 @@ const loadOtherProfile = () => {
             } else {
               //Cancel Request
 
-              fetch(`http://127.0.0.1:8000/accounts/profile/${accountId}/`)
+              fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`)
                 .then((res) => res.json())
                 .then((account) => {
                   description.innerText = `${account.description}`;
@@ -297,7 +297,7 @@ const loadOtherProfile = () => {
                           </p>
                           `;
 
-                  fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+                  fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
                     .then((res) => res.json())
                     .then((user) => {
                       profile_img.innerHTML = `
@@ -318,7 +318,7 @@ const loadOtherProfile = () => {
       } else {
         //Unfriend
 
-        fetch(`http://127.0.0.1:8000/accounts/profile/${accountId}/`)
+        fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`)
           .then((res) => res.json())
           .then((account) => {
             description.innerText = `${account.description}`;
@@ -331,7 +331,7 @@ const loadOtherProfile = () => {
                           </p>
                           `;
 
-            fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+            fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
               .then((res) => res.json())
               .then((user) => {
                 profile_img.innerHTML = `
@@ -352,14 +352,14 @@ const loadOtherProfile = () => {
     .catch((err) => console.log(err));
 
   // total post count
-  fetch(`http://127.0.0.1:8000/posts/all/?account_id=${accountId}`)
+  fetch(`https://net-book-klqt.onrender.com/posts/all/?account_id=${accountId}`)
     .then((res) => res.json())
     .then((posts) => {
       document.getElementById("post-count").innerText = `${posts?.length || 0}`;
       let total = 0;
 
       const likePromises = posts.map((post) =>
-        fetch(`http://127.0.0.1:8000/likes/total/?post_id=${post.id}`)
+        fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
           .then((res) => res.json())
           .then((likes) => {
             const val = parseInt(likes.length);
@@ -375,13 +375,13 @@ const loadOtherProfile = () => {
 
   // friend
   fetch(
-    `http://127.0.0.1:8000/accounts/receive/accept/?account_id=${accountId}`
+    `https://net-book-klqt.onrender.com/accounts/receive/accept/?account_id=${accountId}`
   )
     .then((res) => res.json())
     .then((data_1) => {
       // console.log(data_1)
       fetch(
-        `http://127.0.0.1:8000/accounts/send/accept/?account_id=${accountId}`
+        `https://net-book-klqt.onrender.com/accounts/send/accept/?account_id=${accountId}`
       )
         .then((res) => res.json())
         .then((data_2) => {
@@ -418,12 +418,12 @@ const loadOtherProfile = () => {
 
             if (friends[i].receiver_account == accountId) {
               fetch(
-                `http://127.0.0.1:8000/accounts/profile/${friends[i].sender_account}/`
+                `https://net-book-klqt.onrender.com/accounts/profile/${friends[i].sender_account}/`
               )
                 .then((res) => res.json())
                 .then((account) => {
                   // console.log(account, account.id)
-                  fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+                  fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
                     .then((res) => res.json())
                     .then((user) => {
                       div.innerHTML = `
@@ -447,12 +447,12 @@ const loadOtherProfile = () => {
             }
             if (friends[i].sender_account == accountId) {
               fetch(
-                `http://127.0.0.1:8000/accounts/profile/${friends[i].receiver_account}/`
+                `https://net-book-klqt.onrender.com/accounts/profile/${friends[i].receiver_account}/`
               )
                 .then((res) => res.json())
                 .then((account) => {
                   // console.log(account)
-                  fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+                  fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
                     .then((res) => res.json())
                     .then((user) => {
                       div.innerHTML = `
@@ -483,7 +483,7 @@ const addFriend = (event, id) => {
   // console.log('hello', id);
   const token = localStorage.getItem("authToken");
 
-  fetch(`http://127.0.0.1:8000/accounts/profile/${id}/`)
+  fetch(`https://net-book-klqt.onrender.com/accounts/profile/${id}/`)
     .then((res) => res.json())
     .then((data) => {
       const receiver = {
@@ -491,7 +491,7 @@ const addFriend = (event, id) => {
       };
       console.log(receiver);
       console.log(JSON.stringify(receiver));
-      fetch(`http://127.0.0.1:8000/accounts/friend/request/`, {
+      fetch(`https://net-book-klqt.onrender.com/accounts/friend/request/`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -525,7 +525,7 @@ const removeRequest = (event, id, track) => {
   // ami dici
   if (track == 1) {
     // console.log(track)
-    fetch(`http://127.0.0.1:8000/accounts/accept/${accountId}/${id}/${0}/`, {
+    fetch(`https://net-book-klqt.onrender.com/accounts/accept/${accountId}/${id}/${0}/`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -538,7 +538,7 @@ const removeRequest = (event, id, track) => {
           (window.location.href = `./visitProfileForLoggedInUser.html?account_id=${id}`)
       );
   } else {
-    fetch(`http://127.0.0.1:8000/accounts/accept/${id}/${accountId}/${0}/`, {
+    fetch(`https://net-book-klqt.onrender.com/accounts/accept/${id}/${accountId}/${0}/`, {
       method: "GET",
       headers: {
         "content-type": "application/json",
@@ -558,7 +558,7 @@ const Confirm = (event, id) => {
   const token = localStorage.getItem("authToken");
   const accountId = localStorage.getItem("accountId");
 
-  fetch(`http://127.0.0.1:8000/accounts/accept/${id}/${accountId}/${1}/`, {
+  fetch(`https://net-book-klqt.onrender.com/accounts/accept/${id}/${accountId}/${1}/`, {
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -576,7 +576,7 @@ const Unfriend = (event, id) => {
   event.preventDefault();
   const token = localStorage.getItem("authToken");
 
-  fetch(`http://127.0.0.1:8000/accounts/unfriend/${id}/`, {
+  fetch(`https://net-book-klqt.onrender.com/accounts/unfriend/${id}/`, {
     method: "GET",
     headers: {
       "content-type": "application/json",

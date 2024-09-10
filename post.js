@@ -26,7 +26,7 @@ const addPost = (event) => {
       console.log(data.data.url);
       console.log("postData", postData);
 
-      fetch("http://127.0.0.1:8000/posts/upload/", {
+      fetch("https://net-book-klqt.onrender.com/posts/upload/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const addPost = (event) => {
 const getAllPost = () => {
   // total post
   const accountId = localStorage.getItem("accountId");
-  fetch("http://127.0.0.1:8000/posts/all/")
+  fetch("https://net-book-klqt.onrender.com/posts/all/")
     .then((res) => res.json())
     .then((posts) => {
       const parent = document.getElementById("allPost");
@@ -53,13 +53,13 @@ const getAllPost = () => {
         posts.forEach((post) => {
           // console.log(post)
           // kon account thake post kora hoica
-          fetch(`http://127.0.0.1:8000/accounts/profile/${post.account}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/profile/${post.account}/`)
             .then((res) => res.json())
             .then((account) => {
               // console.log(account)
 
               // account er first_name r last_name bair kortaci
-              fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+              fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
                 .then((res) => res.json())
                 .then((user) => {
                   // console.log(user);
@@ -70,7 +70,7 @@ const getAllPost = () => {
                   div.classList.add("mb-3");
 
                   // ak ta post e total like bair kortaci
-                  fetch(`http://127.0.0.1:8000/likes/total/?post_id=${post.id}`)
+                  fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
                     .then((res) => res.json())
                     .then((likes) => {
                       // ak ta post e total comment bair kortaci
@@ -86,7 +86,7 @@ const getAllPost = () => {
                       // console.log(accountId)
                       if (is_like == true) {
                         fetch(
-                          `http://127.0.0.1:8000/comments/list/?post_id=${post.id}`
+                          `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
                         )
                           .then((res) => res.json())
                           .then((comment) => {
@@ -139,7 +139,7 @@ const getAllPost = () => {
                           });
                       } else {
                         fetch(
-                          `http://127.0.0.1:8000/comments/list/?post_id=${post.id}`
+                          `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
                         )
                           .then((res) => res.json())
                           .then((comment) => {
@@ -202,12 +202,12 @@ const getAllPost = () => {
   const profile_img = document.getElementById("profile-img");
   const profile_name = document.getElementById("profile-name");
   const description = document.getElementById("description");
-  fetch(`http://127.0.0.1:8000/accounts/profile/${accountId}/`)
+  fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`)
     .then((res) => res.json())
     .then((account) => {
       // console.log(account)
       description.innerText =`${account.description}`
-      fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+      fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
         .then((res) => res.json())
         .then((user) => {
           profile_img.innerHTML = `
@@ -226,7 +226,7 @@ const getAllPost = () => {
     });
 
   // total post count
-  fetch(`http://127.0.0.1:8000/posts/all/?account_id=${accountId}`)
+  fetch(`https://net-book-klqt.onrender.com/posts/all/?account_id=${accountId}`)
     .then((res) => res.json())
     .then((posts) => {
         document.getElementById("post-count").innerText = `${posts?.length || 0}`;
@@ -234,7 +234,7 @@ const getAllPost = () => {
 
         
         const likePromises = posts.map((post) =>
-            fetch(`http://127.0.0.1:8000/likes/total/?post_id=${post.id}`)
+            fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
                 .then((res) => res.json())
                 .then((likes) => {
                     const val = parseInt(likes.length);
@@ -252,13 +252,13 @@ const getAllPost = () => {
 
   // total frined count
   fetch(
-    `http://127.0.0.1:8000/accounts/receive/accept/?account_id=${accountId}`
+    `https://net-book-klqt.onrender.com/accounts/receive/accept/?account_id=${accountId}`
   )
     .then((res) => res.json())
     .then((data_1) => {
       // console.log(data_1)
       fetch(
-        `http://127.0.0.1:8000/accounts/send/accept/?account_id=${accountId}`
+        `https://net-book-klqt.onrender.com/accounts/send/accept/?account_id=${accountId}`
       )
         .then((res) => res.json())
         .then((data_2) => {
@@ -278,7 +278,7 @@ const getAllPost = () => {
 
   // discover people
   const pro_file = document.getElementById("profile-1");
-  fetch(`http://127.0.0.1:8000/accounts/profile/`)
+  fetch(`https://net-book-klqt.onrender.com/accounts/profile/`)
     .then((res) => res.json())
     .then((accounts) => {
 
@@ -290,7 +290,7 @@ const getAllPost = () => {
         }
         if (accounts[i].id != accountId) {
           
-          fetch(`http://127.0.0.1:8000/accounts/user/${accounts[i].user}/`)
+          fetch(`https://net-book-klqt.onrender.com/accounts/user/${accounts[i].user}/`)
           .then((res) => res.json())
           .then((user) => {
             const div = document.createElement("div");
@@ -327,10 +327,10 @@ const PostModal = () => {
   const div = document.createElement("div");
   const accountId = localStorage.getItem("accountId");
 
-  fetch(`http://127.0.0.1:8000/accounts/profile/${accountId}/`)
+  fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`)
     .then((res) => res.json())
     .then((account) => {
-      fetch(`http://127.0.0.1:8000/accounts/user/${account.user}/`)
+      fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
         .then((res) => res.json())
         .then((user) => {
           div.innerHTML = `

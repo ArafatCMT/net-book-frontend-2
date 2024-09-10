@@ -23,7 +23,7 @@ const handleRegistration = (event) => {
         RegistrationData.password
       )
     ) {
-      fetch("http://127.0.0.1:8000/accounts/register/", {
+      fetch("https://net-book-klqt.onrender.com/accounts/register/", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(RegistrationData),
@@ -54,7 +54,7 @@ const handleLogin = (event) => {
   };
 
   console.log(loginData);
-  fetch("http://127.0.0.1:8000/accounts/login/", {
+  fetch("https://net-book-klqt.onrender.com/accounts/login/", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(loginData),
@@ -82,7 +82,7 @@ const handleLogout = () => {
   const token = localStorage.getItem("authToken");
   console.log(token);
 
-  fetch("http://127.0.0.1:8000/accounts/logout/", {
+  fetch("https://net-book-klqt.onrender.com/accounts/logout/", {
     method: "GET",
     headers: {
       "content-type": "application/json",

@@ -8,7 +8,7 @@ const editPost = (event, postId) => {
 
   const token = localStorage.getItem("authToken");
 
-  fetch(`http://127.0.0.1:8000/posts/detail/${postId}`)
+  fetch(`https://net-book-klqt.onrender.com/posts/detail/${postId}`)
     .then((res) => res.json())
     .then((data) => {
       const updatePostData = {
@@ -17,7 +17,7 @@ const editPost = (event, postId) => {
       };
       // console.log(des)
 
-      fetch(`http://127.0.0.1:8000/posts/detail/${postId}/`, {
+      fetch(`https://net-book-klqt.onrender.com/posts/detail/${postId}/`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
