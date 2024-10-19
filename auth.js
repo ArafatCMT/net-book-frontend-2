@@ -23,7 +23,7 @@ const handleRegistration = (event) => {
         RegistrationData.password
       )
     ) {
-      fetch("https://net-book-klqt.onrender.com/accounts/register/", {
+      fetch("https://net-book.vercel.app/accounts/register/", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(RegistrationData),
@@ -54,7 +54,7 @@ const handleLogin = (event) => {
   };
 
   console.log(loginData);
-  fetch("https://net-book-klqt.onrender.com/accounts/login/", {
+  fetch("https://net-book.vercel.app/accounts/login/", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(loginData),
@@ -82,7 +82,7 @@ const handleLogout = () => {
   const token = localStorage.getItem("authToken");
   console.log(token);
 
-  fetch("https://net-book-klqt.onrender.com/accounts/logout/", {
+  fetch("https://net-book.vercel.app/accounts/logout/", {
     method: "GET",
     headers: {
       "content-type": "application/json",

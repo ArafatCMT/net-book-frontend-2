@@ -2,11 +2,11 @@ const Friends = () =>{
     const accountId = localStorage.getItem("accountId")
     
 // friend 
-fetch(`https://net-book-klqt.onrender.com/accounts/receive/accept/?account_id=${accountId}`)
+fetch(`https://net-book.vercel.app/accounts/receive/accept/?account_id=${accountId}`)
 .then(res => res.json())
 .then(data_1 =>{
   // console.log(data_1)
-  fetch(`https://net-book-klqt.onrender.com/accounts/send/accept/?account_id=${accountId}`)
+  fetch(`https://net-book.vercel.app/accounts/send/accept/?account_id=${accountId}`)
   .then(res => res.json())
   .then(data_2 =>{
     // console.log(data_1)
@@ -39,11 +39,11 @@ fetch(`https://net-book-klqt.onrender.com/accounts/receive/accept/?account_id=${
 
       if(friends[i].receiver_account == accountId)
       {
-        fetch(`https://net-book-klqt.onrender.com/accounts/profile/${friends[i].sender_account}/`)
+        fetch(`https://net-book.vercel.app/accounts/profile/${friends[i].sender_account}/`)
         .then((res) => res.json())
         .then((account) => {
         // console.log(friends[i].sender_account, accountId)
-          fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
+          fetch(`https://net-book.vercel.app/accounts/user/${account.user}/`)
           .then((res) => res.json())
           .then(user =>{
             div.innerHTML = `
@@ -62,11 +62,11 @@ fetch(`https://net-book-klqt.onrender.com/accounts/receive/accept/?account_id=${
       }
       if(friends[i].sender_account == accountId)
       {
-        fetch(`https://net-book-klqt.onrender.com/accounts/profile/${friends[i].receiver_account}/`)
+        fetch(`https://net-book.vercel.app/accounts/profile/${friends[i].receiver_account}/`)
         .then((res) => res.json())
         .then((account) => {
           // console.log(account,friends[i].receiver_account,'hello')
-          fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
+          fetch(`https://net-book.vercel.app/accounts/user/${account.user}/`)
           .then((res) => res.json())
           .then(user =>{
             div.innerHTML = `
@@ -99,7 +99,7 @@ const Removefriend = (event, id) =>{
   event.preventDefault();
   const token = localStorage.getItem("authToken");
 
-  fetch(`https://net-book-klqt.onrender.com/accounts/unfriend/${id}/`,{
+  fetch(`https://net-book.vercel.app/accounts/unfriend/${id}/`,{
     method:"GET",
     headers: {
       "content-type": "application/json",

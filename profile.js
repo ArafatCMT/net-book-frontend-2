@@ -1,7 +1,7 @@
 const myPosts = () => {
   const accountId = localStorage.getItem("accountId");
   // console.log(accountId)
-  fetch(`https://net-book-klqt.onrender.com/posts/all/?account_id=${accountId}`)
+  fetch(`https://net-book.vercel.app/posts/all/?account_id=${accountId}`)
     .then((res) => res.json())
     .then((posts) => {
       // console.log(posts)
@@ -12,12 +12,12 @@ const myPosts = () => {
       } else {
         posts.forEach((post) => {
           // console.log(post)
-          fetch(`https://net-book-klqt.onrender.com/accounts/profile/${post.account}/`)
+          fetch(`https://net-book.vercel.app/accounts/profile/${post.account}/`)
             .then((res) => res.json())
             .then((account) => {
               // console.log(account);
 
-              fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
+              fetch(`https://net-book.vercel.app/accounts/user/${account.user}/`)
                 .then((res) => res.json())
                 .then((user) => {
                   // console.log(user);
@@ -27,7 +27,7 @@ const myPosts = () => {
                   div.classList.add("col-sm-12");
                   div.classList.add("mb-3");
 
-                  fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
+                  fetch(`https://net-book.vercel.app/likes/total/?post_id=${post.id}`)
                     .then((res) => res.json())
                     .then((likes) => {
                       let is_like = false;
@@ -39,7 +39,7 @@ const myPosts = () => {
                       });
                       if (is_like == true) {
                         fetch(
-                          `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
+                          `https://net-book.vercel.app/comments/list/?post_id=${post.id}`
                         )
                           .then((res) => res.json())
                           .then((comment) => {
@@ -163,7 +163,7 @@ const myPosts = () => {
                           });
                       } else {
                         fetch(
-                          `https://net-book-klqt.onrender.com/comments/list/?post_id=${post.id}`
+                          `https://net-book.vercel.app/comments/list/?post_id=${post.id}`
                         )
                           .then((res) => res.json())
                           .then((comment) => {
@@ -301,7 +301,7 @@ const deletePost = (event, id) => {
   // console.log(postId)
   const token = localStorage.getItem("authToken");
 
-  fetch(`https://net-book-klqt.onrender.com/posts/detail/${id}/`, {
+  fetch(`https://net-book.vercel.app/posts/detail/${id}/`, {
     method: "DELETE",
     headers: {
       "content-type": "application/json",
@@ -319,12 +319,12 @@ const loadProfileData = () => {
   const profile_img = document.getElementById("profile-img");
   const profile_name = document.getElementById("profile-name");
   const description = document.getElementById("description");
-  fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`)
+  fetch(`https://net-book.vercel.app/accounts/profile/${accountId}/`)
     .then((res) => res.json())
     .then((account) => {
       // console.log(account)
       description.innerText =`${account.description}`
-      fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
+      fetch(`https://net-book.vercel.app/accounts/user/${account.user}/`)
         .then((res) => res.json())
         .then((user) => {
           profile_img.innerHTML = `
@@ -348,7 +348,7 @@ const loadProfileData = () => {
 
 
     // total post count
-  fetch(`https://net-book-klqt.onrender.com/posts/all/?account_id=${accountId}`)
+  fetch(`https://net-book.vercel.app/posts/all/?account_id=${accountId}`)
   .then((res) => res.json())
   .then((posts) => {
       document.getElementById("post-count").innerText = `${posts?.length || 0}`;
@@ -356,7 +356,7 @@ const loadProfileData = () => {
 
       
       const likePromises = posts.map((post) =>
-          fetch(`https://net-book-klqt.onrender.com/likes/total/?post_id=${post.id}`)
+          fetch(`https://net-book.vercel.app/likes/total/?post_id=${post.id}`)
               .then((res) => res.json())
               .then((likes) => {
                   const val = parseInt(likes.length);
@@ -374,13 +374,13 @@ const loadProfileData = () => {
 
   // friend
   fetch(
-    `https://net-book-klqt.onrender.com/accounts/receive/accept/?account_id=${accountId}`
+    `https://net-book.vercel.app/accounts/receive/accept/?account_id=${accountId}`
   )
     .then((res) => res.json())
     .then((data_1) => {
       // console.log(data_1)
       fetch(
-        `https://net-book-klqt.onrender.com/accounts/send/accept/?account_id=${accountId}`
+        `https://net-book.vercel.app/accounts/send/accept/?account_id=${accountId}`
       )
         .then((res) => res.json())
         .then((data_2) => {
@@ -421,12 +421,12 @@ const loadProfileData = () => {
             // amake send korcilo
             if (friends[i].receiver_account == accountId) {
               fetch(
-                `https://net-book-klqt.onrender.com/accounts/profile/${friends[i].sender_account}/`
+                `https://net-book.vercel.app/accounts/profile/${friends[i].sender_account}/`
               )
                 .then((res) => res.json())
                 .then((account) => {
                   // console.log(account, 'hello')
-                  fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
+                  fetch(`https://net-book.vercel.app/accounts/user/${account.user}/`)
                     .then((res) => res.json())
                     .then((user) => {
                       // console.log(user);
@@ -454,12 +454,12 @@ const loadProfileData = () => {
             // ami send korcilam
             if (friends[i].sender_account == accountId) {
               fetch(
-                `https://net-book-klqt.onrender.com/accounts/profile/${friends[i].receiver_account}/`
+                `https://net-book.vercel.app/accounts/profile/${friends[i].receiver_account}/`
               )
                 .then((res) => res.json())
                 .then((account) => {
                   // console.log(account,'good')
-                  fetch(`https://net-book-klqt.onrender.com/accounts/user/${account.user}/`)
+                  fetch(`https://net-book.vercel.app/accounts/user/${account.user}/`)
                     .then((res) => res.json())
                     .then((user) => {
                       // console.log(user)
@@ -520,7 +520,7 @@ const UpdateProfileData = (event) => {
         city: address,
         description:description,
       };
-      fetch(`https://net-book-klqt.onrender.com/accounts/profile/${accountId}/`, {
+      fetch(`https://net-book.vercel.app/accounts/profile/${accountId}/`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
