@@ -8,8 +8,8 @@ const displayPost = () => {
   const postId = getParam();
   // console.log(postId)
   loadCommentForSinglePost();
+  
   // console.log('hello')
-
   const parent = document.getElementById("post_containter");
   // post
   fetch(`https://net-book.vercel.app/posts/detail/${postId}/`, {

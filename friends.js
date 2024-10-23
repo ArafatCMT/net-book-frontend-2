@@ -81,8 +81,6 @@ fetch(`https://net-book.vercel.app/accounts/receive/accept/?account_id=${account
                       <a style="text-decoration: none; font-weight: 500;">Unfriend</a>
                     </p>
                   </div>
-              
-            
             `;
           })
         })

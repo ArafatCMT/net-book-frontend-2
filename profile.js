@@ -538,5 +538,4 @@ const UpdateProfileData = (event) => {
 loadProfileData();
 myPosts();
 
-// https://youtu.be/i0ar7W98Osc?si=CEf2IQQnIFWYxQYK
 

@@ -593,16 +593,4 @@ const Unfriend = (event, id) => {
 loadOtherProfile();
 OtherProfilePosts();
 
-// confirm and delete
-{
-  /* <div class="d-flex justify-content-center" style="gap:10px">
-                                <div><a onclick="Confirm(event,${accountId})" class="btn btn-sm" style="background:#0861F2; color:#fff; font-weight:500;">Confirm</a></div>
-                                <div><a onclick="removeRequest(event,${accountId},${0})" class="btn btn-sm" style="background:#D8DADF; font-weight:500;">Delete</a></div>
-                              </div>
 
-
-// unfriend
-<div class="d-flex justify-content-center" style="gap:10px;">
-                      <div><a onclick="Unfriend(event,${accountId})" class="btn btn-sm" style="background:#D8DADF; font-weight:500;">Unfriend</a></div>
-                    </div> */
-}
