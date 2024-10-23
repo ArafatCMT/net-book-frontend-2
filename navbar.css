@@ -53,13 +53,13 @@
     cursor: pointer;
 }
 .profile-btn{
-    background-color:#9333ea;
+    background-color:#06537A;
 }
 .profile-btn:hover{
     color: white;
     text-decoration: none;
     cursor: pointer;
-    background-color: #8b5cf6;
+    background-color: #18668d;
 }
 .icon{
     width: 35px;
