@@ -306,7 +306,7 @@ const getAllPost = () => {
                     } class="pro-img mt-1 ms-1" alt="">
                   </div>
                   <div>
-                      <h6 class="title mb-0 pb-0 mt-1 me-5" style="color:rgb(62, 61, 61);"><b>${
+                      <h6 class="title mb-0 pb-0 mt-1" style="color:rgb(62, 61, 61);"><b>${
                         user.first_name + " " + user.last_name
                       }</b></h6>
                   </div>
