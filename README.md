@@ -1,6 +1,12 @@
 ## Netbook - Social Media Platform
 Netbook is a unique social media website where users can create customizable profiles with profile pictures, bios, and personal details. Users can connect as friends, view each other’s activities, and share posts with text and images in their feeds. Phibook offers features like comments, likes, and dislikes on posts, along with options to edit or delete posts and comments, giving users enhanced control over their interactions.
 
+### Technology
+- HTML
+- CSS
+- Bootstrap v5
+- JavaScript
+
 ### Features
 
 ### User Management
